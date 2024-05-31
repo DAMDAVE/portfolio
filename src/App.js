@@ -44,18 +44,23 @@ import githubdark from "./Images/githubdark.svg";
 function App() {
   const date = new Date();
   const year = date.getFullYear();
+  const Appref = useRef(null);
+  const [page, setPage] = useState(1);
+  const [formstatus, setFormStatus] = useState("");
+  const [state, setState] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
   const navtoGitHub = () => {
     window.open("https://github.com/DAMDAVE", "_blank");
   };
-
   const navtoDiscord = () => {
     window.open("https://discord.com/users/damthedave", "_blank");
   };
-
   const navtoWhatsapp = () => {
     window.open("https://wa.me/+2348148774367", "_blank");
   };
-
   const DownloadCV = () => {
     const url = "./Document/OMOYAJOWO DAVID CV.pdf";
 
@@ -66,16 +71,56 @@ function App() {
     a.click();
     document.body.removeChild(a);
   };
+  const validateEmail = (email) => {
+    const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    return regex.test(email);
+  };
+  const getIsFormValid = () => {
+    if (
+      (state.name !== "") &
+      (state.name !== null) &
+      (validateEmail(state.email) === true) &
+      (state.message !== "") &
+      (state.message !== null)
+    ) {
+      return true;
+    } else return false;
+  };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-  const [state, setState] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
+    try {
+      const response = await fetch(
+        "https://turkish-palate.onrender.com/api/v1/contact_me",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(state),
+        }
+      );
 
-  let [page, setPage] = useState(1);
-  const Appref = useRef(null);
-
+      if (response.ok) {
+        setFormStatus("Message sent successfully!");
+        setState({ name: "", email: "", message: "" });
+        setTimeout(() => {
+          setFormStatus("");
+        }, 5000);
+      } else {
+        setFormStatus("Failed to send message. Please try again.");
+        setTimeout(() => {
+          setFormStatus("");
+        }, 5000);
+      }
+    } catch (error) {
+      setFormStatus("An error occurred. Please try again.");
+      setTimeout(() => {
+        setFormStatus("");
+      }, 5000);
+      return;
+    }
+  };
   useEffect(() => {
     const scrollToPage = (pageNumber) => {
       if (Appref.current) {
@@ -89,24 +134,6 @@ function App() {
 
     scrollToPage(page);
   }, [page]);
-
-  const validateEmail = (email) => {
-    const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    return regex.test(email);
-  };
-
-  const getIsFormValid = () => {
-    if (
-      (state.name !== "") &
-      (state.name !== null) &
-      (validateEmail(state.email) === true) &
-      (state.needs !== "") &
-      (state.needs !== null)
-    ) {
-      return true;
-    } else return false;
-  };
-
 
   return (
     <div className="App" ref={Appref}>
@@ -460,11 +487,11 @@ function App() {
                     <input
                       type="text"
                       placeholder="Enter your needs"
-                      value={state.needs}
+                      value={state.message}
                       onChange={(e) => {
                         setState({
                           ...state,
-                          needs: e.target.value,
+                          message: e.target.value,
                         });
                       }}
                     />
@@ -472,10 +499,11 @@ function App() {
                 </div>
               </form>
             </div>
-            <button disabled={!getIsFormValid()}>
+            <button onClick={handleSubmit} disabled={!getIsFormValid()}>
               <span>Send Message</span>
               <img src={send} alt="" />
             </button>
+            {formstatus && <p>{formstatus}</p>}
           </div>
         </div>
         <footer>

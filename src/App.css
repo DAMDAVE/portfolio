@@ -20,6 +20,13 @@
   overflow-y: scroll;
 }
 
+.Home,
+.About,
+.Skills,
+.Contact {
+  min-height: 600px;
+}
+
 /*Beginning of Navigation bar design */
 .Nav {
   top: 25%;
@@ -29,6 +36,7 @@
   background-color: #1a1e23;
   border-radius: 20px;
   border: solid 1px #ffffff50;
+  display: none;
 }
 
 .Nav > .container {
@@ -1002,6 +1010,14 @@ main > .section {
   font-size: 12px;
 }
 
+.con-foot > p {
+  color: #12f7d6;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+  font-size: 12px;
+}
+
 .con-foot > button:disabled {
   background-color: #12f7d650;
 }
@@ -1067,11 +1083,25 @@ Footer > .socials {
   width: 20px;
 }
 
+@media screen and (min-width: 992px) and (min-height: 600px) {
+  /* Your CSS rules for devices with a width greater than 992px and a height greater than 600px */
+  .App {
+    overflow: hidden;
+  }
+
+  .Nav {
+    display: block;
+  }
+}
+
 /* End of Contact Page Design*/
 
 @media (max-width: 991.98px) {
   /* CSS rules for tablets */
-
+  /*Navigation removal*/
+  .Nav {
+    display: none;
+  }
   /*Beginning of Home Page Redesign*/
 
   .App {
@@ -1249,10 +1279,6 @@ Footer > .socials {
 @media (max-width: 767.98px) {
   /* CSS rules for small devices */
 
-  /*Navigation removal*/
-  .Nav {
-    display: none;
-  }
   /*Beginning of Home Page Redesign*/
 
   .codename {
@@ -1500,4 +1526,13 @@ Footer > .socials {
     width: 80%;
     min-width: 60%;
   }
+  .copyright,
+  .terms {
+    flex: 0 1 100%;
+    text-align: center;
+
+    justify-content: center;
+  }
+
+  /* End of Contact Page Design*/
 }
