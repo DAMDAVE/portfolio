@@ -1,0 +1,1503 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+#root {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.App {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  font-size: 15px;
+  overflow-y: scroll;
+}
+
+/*Beginning of Navigation bar design */
+.Nav {
+  top: 25%;
+  left: 5%;
+  padding: 10px 5px;
+  position: fixed;
+  background-color: #1a1e23;
+  border-radius: 20px;
+  border: solid 1px #ffffff50;
+}
+
+.Nav > .container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.Nav button {
+  height: 25px;
+  width: 25px;
+  position: relative;
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Nav button > span {
+  left: 40px;
+  padding: 3px;
+  position: absolute;
+  background-color: #ffffff;
+  border-radius: 5px;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 12px;
+  opacity: 0;
+}
+
+.Nav button:hover > span {
+  opacity: 1;
+}
+
+.Nav .bt-active {
+  border-radius: 50%;
+  background-color: #ffffff;
+}
+
+.Nav button > img {
+  height: 15px;
+  width: 15px;
+}
+
+/*End of Navgation Bar Design */
+
+/*Beinning of Home Page Design */
+.Home {
+  height: 100%;
+  width: 100%;
+  background-color: #292f36;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  scroll-snap-align: start;
+}
+
+Header {
+  height: 17vh;
+  min-height: 60px;
+  width: 85%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 0.1px solid #ffffff10;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #ffffff;
+}
+
+.codename {
+  font-size: 25px;
+}
+
+.codename > span {
+  font-size: 30px;
+  color: #12f7d6;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
+  color: #12f7d6;
+}
+
+nav > .bt-github {
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  font-size: 12px;
+  color: #ffffff;
+  transition: transform 0.3s ease;
+}
+
+.bt-github > div > img {
+  height: 20px;
+  width: 20px;
+}
+
+.bt-github:hover {
+  transform: scale(1.1);
+}
+
+.bd-home {
+  height: 83%;
+  width: 100%;
+  padding-top: 3%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bd-home > main {
+  height: 85%;
+  width: 85%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.bd-home > main > h1 {
+  padding: 5px;
+  width: 100%;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 50px;
+  color: #12f7d6;
+  text-align: center;
+}
+
+main > .section {
+  height: 80%;
+  min-height: 500px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 7%;
+}
+
+.profile {
+  height: fit-content;
+  width: 18%;
+  min-width: 200px;
+  padding: 40px 10px;
+  border: solid 2px #ffffff;
+  border-radius: 6rem 0px 6rem 0px;
+  box-shadow: -3px -3px #12f7d6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.pf-contain {
+  height: 70%;
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.pf-contain > .pct {
+  height: 50%;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+}
+
+.pct-div {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  border: solid 2px #12f7d6;
+  overflow: hidden;
+}
+
+.pct-div > img {
+  height: 50px;
+  width: 50px;
+}
+
+.pf-contain > .pct > h1 {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 15px;
+  color: #ffffff;
+}
+
+.pct > p {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 100;
+  font-style: normal;
+  color: #ffffff;
+  font-size: 10px;
+}
+
+.pf-info {
+  height: 32%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.pf-info > section {
+  display: flex;
+  align-items: center;
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 100;
+  font-style: normal;
+  color: #ffffff;
+  font-size: 11px;
+}
+
+.pf-info section img {
+  height: 15px;
+  width: 15px;
+  margin-right: 5px;
+}
+
+.pf-info section a {
+  width: 80%;
+  height: 100%;
+  color: #ffffff;
+  text-decoration: none;
+  overflow-wrap: break-word;
+}
+
+.pf-info section a::-webkit-scrollbar {
+  height: 5px;
+}
+
+.pf-info section a::-webkit-scrollbar-thumb {
+  background-color: #1a1e23;
+}
+
+.pf-info section a::-webkit-scrollbar-track {
+  background-color: #43454d;
+}
+
+.pf-contain > .langs {
+  padding: 5px 0px;
+  width: 100%;
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.langs > span {
+  width: 20%;
+  border-radius: 5px;
+  background-color: #12f7d6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile > button {
+  padding: 5px;
+  width: 70%;
+  border: none;
+  border-radius: 20px;
+  background: none;
+  background-color: #ffffff;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 12px;
+  display: flex;
+  flex-direction: row;
+  align-self: flex-start;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.profile > button > img {
+  height: 15px;
+}
+
+.p-info {
+  height: 80%;
+  width: 55%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.p-info > .text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  width: 77%;
+}
+
+.text div {
+  width: 100%;
+}
+
+.codesnippets {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 10px;
+  color: #12f7d6;
+}
+
+.par {
+  margin: 2px 0px 2px 7px;
+}
+
+.par > p {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 12px;
+  color: #ffffff;
+}
+
+.par.one > p {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 25px;
+  color: #ffffff;
+}
+
+.par.two {
+  padding-right: 15px;
+}
+
+.par.one > p > span {
+  color: #12f7d6;
+}
+
+.par.three {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+}
+
+.par.three > p {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 15px;
+  color: #12f7d6;
+}
+
+.par.three > button {
+  background: none;
+  border: none;
+  background-color: #43454d;
+  height: 30px;
+  width: 30px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.par.three > button > img {
+  height: 20px;
+  width: 20px;
+}
+
+.exp-contain {
+  padding: 20px 5px;
+  border-radius: 50px;
+  background-color: #1a1e23;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.exp-contain > .section {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.exp-contain > .section > p {
+  font-size: 28px;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #12f7d6;
+}
+
+.exp-contain > .section > span {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 300;
+  font-style: normal;
+  font-style: normal;
+  color: #ffffff;
+  font-size: 10px;
+}
+/*End of home page design*/
+
+/*Beginning of About Page Design */
+.About {
+  height: 100%;
+  width: 100%;
+  background: url(./Images/bg-about.svg) center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  scroll-snap-align: start;
+}
+
+.About > .mouseIcon {
+  height: 10%;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mouseIcon > img {
+  height: 100%;
+}
+
+.abt-contain {
+  height: 50%;
+  width: 80%;
+  padding-left: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.abt-content {
+  height: 95%;
+  width: 55%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.abt-heading {
+  padding: 5px 10px;
+  width: fit-content;
+  background-color: #292f36;
+  border: solid 1px #12f7d6;
+  border-radius: 20px 0px 20px 0px;
+}
+
+.abt-heading > h1 {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 35px;
+  color: #12f7d6;
+}
+
+.abt-pic {
+  height: 100%;
+  width: 25%;
+  min-height: 250px;
+  min-width: 200px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.abt-text {
+  height: 70%;
+  width: 100%;
+  padding: 20px 25px;
+  border-radius: 10px;
+  background-color: #292f36;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.codesnippets-2 {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 8px;
+  color: #98faec;
+}
+
+.abt-text > h3 {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 15px;
+  color: #12f7d6;
+}
+
+.abt-text > .txt-contain {
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.txt-contain > p {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 12px;
+  color: #ffffff;
+}
+
+.txt-langs {
+  color: #12f7d6;
+}
+
+/*End of "About page" design */
+
+/*Beginning of "Skills page" design */
+.Skills {
+  height: 100vh;
+  width: 100%;
+  background: url(./Images/bg-skills.svg) center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  scroll-snap-align: start;
+}
+
+.sks-contain {
+  height: 73%;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sks-head {
+  height: 40%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mousefrag {
+  height: 50%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.mousefrag > img:nth-child(1) {
+  height: 60%;
+  margin-left: 50%;
+}
+
+.mousefrag > img:nth-child(2) {
+  height: 80%;
+  margin-left: 20%;
+}
+
+.sks-heading {
+  height: 45%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.sks-line {
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sks-line > h1 {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 40px;
+  color: #12f7d6;
+  text-align: center;
+}
+
+.sks-line > .img {
+  width: 110px;
+}
+
+.sks-line > .img > img {
+  width: 100%;
+}
+
+.sks-heading > .sks-par {
+  height: 20%;
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 12px;
+  color: #ffffff;
+  text-align: center;
+}
+
+.skillsets {
+  height: 50%;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sk-services {
+  height: 30%;
+  width: 70%;
+  min-width: 340px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.skserv {
+  width: 40%;
+  border-left: solid 5px #0c73b8;
+  border-radius: 4px 0px 0px 4px;
+}
+
+.skserv > div {
+  height: 90%;
+  border-radius: 0px 4px 4px 0px;
+  background-color: #98faec;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.servdivs > img {
+  height: 20px;
+  width: 20px;
+}
+
+.servdivs > h5 {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 12px;
+  color: #292f36;
+}
+
+.servdivs > p {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 10px;
+  color: #43454d;
+}
+
+.sk-skills {
+  height: 50%;
+  width: 100%;
+  min-width: 450px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.sk-langs {
+  height: fit-content;
+  width: 15%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5%;
+}
+
+.sk-langs > div:nth-child(1) {
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.sk-langs > div:nth-child(1) > img {
+  height: 40px;
+  width: 40px;
+}
+
+.sk-langs.html > div:nth-child(1) {
+  background-color: #e54f26;
+}
+
+.sk-langs.css > div:nth-child(1) {
+  background-color: #0c73b8;
+}
+
+.sk-langs.js > div:nth-child(1) {
+  background-color: #e7a020;
+}
+
+.sk-langs.react > div:nth-child(1) {
+  background-color: #28a9e0;
+}
+
+.sk-langs > div > h1 {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 15px;
+}
+
+.sk-langs.html > div > h1 {
+  color: #e54f26;
+}
+.sk-langs.css > div > h1 {
+  color: #0c73b8;
+}
+.sk-langs.js > div > h1 {
+  color: #e7a020;
+}
+.sk-langs.react > div > h1 {
+  color: #28a9e0;
+}
+
+/* End of "Skills page" design*/
+
+/* Beginning of "Contact page" design*/
+
+.Contact {
+  height: 100%;
+  width: 100%;
+  background-color: #1a1e23;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 5%;
+  scroll-snap-align: start;
+}
+
+.con-contain {
+  height: 85%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.con-head {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.con-mouse {
+  height: 40%;
+}
+
+.con-mouse > img {
+  height: 100%;
+}
+
+.con-title {
+  height: 40%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.con-line {
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.con-line > h1 {
+  width: 100%;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #12f7d6;
+  font-size: 30px;
+  text-align: center;
+}
+
+.con-line > img {
+  width: 120px;
+}
+
+.con-title > p {
+  height: 20%;
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 12px;
+  color: #ffffff;
+}
+
+.con-foot {
+  height: 55%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.con-msg {
+  height: 70%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.con-msg-ttl {
+  width: fit-content;
+  padding: 5px 20px;
+  border: solid 2px #12f7d6;
+  border-radius: 20px 0px 20px 0px;
+}
+
+.con-msg-ttl > h1 {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
+  color: #12f7d6;
+  font-size: 15px;
+}
+
+.con-msg-form {
+  height: 60%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.con-top-form {
+  height: 30%;
+  width: 60%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.con-down-form {
+  height: 30%;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+}
+
+.inputdivs {
+  min-width: 360px;
+}
+
+.inputdivs.top > fieldset {
+  height: 100%;
+  width: 45%;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.inputdivs > fieldset > label {
+  font-size: 10px;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #12f7d6;
+}
+
+.inputdivs > fieldset > input {
+  height: 50%;
+  width: 100%;
+  border: none;
+  border-bottom: solid 1px #12f7d6;
+  background: none;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+  font-size: 12px;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.inputdivs > fieldset > input:focus {
+  outline: none;
+}
+
+.inputdivs.down > fieldset {
+  height: 100%;
+  width: 100%;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.inputdivs > fieldset > input::placeholder {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+  font-size: 12px;
+  color: #ffffff;
+}
+
+.con-foot > button {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 20px;
+  background: none;
+  background-color: #12f7d6;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+  font-size: 12px;
+}
+
+.con-foot > button:disabled {
+  background-color: #12f7d650;
+}
+
+.con-foot > button > img {
+  height: 13px;
+  width: 13px;
+}
+
+Footer {
+  height: 5%;
+  min-height: 40px;
+  width: 100%;
+  padding: 0px 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border-top: solid 0.5px #43454d;
+}
+
+Footer > .copyright {
+  width: fit-content;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 12px;
+  color: #ffffff;
+}
+
+Footer > .terms {
+  width: fit-content;
+  display: flex;
+  gap: 10px;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 12px;
+  color: #ffffff;
+}
+
+Footer > .socials {
+  width: fit-content;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.socials > button {
+  height: 30px;
+  width: 30px;
+  background: none;
+  border: none;
+  background-color: #12f7d6;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.socials > button > img {
+  height: 20px;
+  width: 20px;
+}
+
+/* End of Contact Page Design*/
+
+@media (max-width: 991.98px) {
+  /* CSS rules for tablets */
+
+  /*Beginning of Home Page Redesign*/
+
+  .App {
+    overflow-y: scroll;
+  }
+
+  .Home {
+    height: fit-content;
+  }
+
+  .codename {
+    font-size: 23px;
+  }
+
+  .codename > span {
+    font-size: 28px;
+  }
+
+  .bt-github > p {
+    display: none;
+  }
+  .bd-home {
+    height: fit-content;
+    padding-bottom: 10svh;
+  }
+
+  .bd-home > main {
+    height: fit-content;
+    gap: 20px;
+  }
+
+  main > .section {
+    height: fit-content;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: space-around;
+  }
+
+  .profile {
+    width: 25%;
+    flex: 0 1 25%;
+  }
+
+  .p-info {
+    flex: 0 1 80%;
+  }
+
+  .par > p {
+    font-size: 11px;
+  }
+
+  .par.one > p {
+    font-size: 23px;
+  }
+
+  .exp-contain > .section > p {
+    font-size: 25px;
+  }
+
+  .exp-contain > .section > span {
+    font-size: 9px;
+  }
+
+  /*End of home page design*/
+
+  /*Beginning of About Page Design */
+
+  .About {
+    height: fit-content;
+    padding: 10vh 0;
+    gap: 40px;
+  }
+
+  .About > .mouseIcon {
+    height: 10vh;
+    min-height: 60px;
+  }
+
+  .abt-contain {
+    padding-left: 0%;
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+
+  .abt-content {
+    flex: 0 1 80%;
+    gap: 20px;
+  }
+
+  .abt-heading > h1 {
+    font-size: 30px;
+  }
+
+  .abt-pic {
+    height: 100%;
+    max-height: 280px;
+    width: 25%;
+    flex: 0 1 25%;
+  }
+
+  .txt-contain > p {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 11px;
+    color: #ffffff;
+  }
+  /*End of "About page" design */
+
+  /*Beginning of "Skills page" design */
+
+  .Skills {
+    min-height: 650px;
+  }
+
+  .mousefrag > img:nth-child(2) {
+    height: 70%;
+  }
+
+  .sks-line > h1 {
+    font-size: 35px;
+  }
+
+  .sks-line > .img {
+    width: 100px;
+  }
+
+  .sks-heading > .sks-par {
+    font-size: 11px;
+  }
+
+  .sk-services {
+    height: 25%;
+  }
+
+  .servdivs > img {
+    height: 18px;
+    width: 18px;
+  }
+
+  .servdivs > h5 {
+    font-size: 11px;
+  }
+
+  .servdivs > p {
+    font-size: 9px;
+  }
+  /* End of "Skills page" design*/
+
+  /* Beginning of "Contact page" design*/
+  .Contact {
+    min-height: 650px;
+  }
+  .con-line > h1 {
+    font-size: 28px;
+  }
+
+  .con-line > img {
+    width: 110px;
+  }
+
+  .con-title > p {
+    font-size: 11px;
+  }
+  Footer {
+    padding: 0px 10px;
+  }
+  Footer > .copyright,
+  .terms {
+    font-size: 11px;
+  }
+  /* End of Contact Page Design*/
+}
+
+@media (max-width: 767.98px) {
+  /* CSS rules for small devices */
+
+  /*Navigation removal*/
+  .Nav {
+    display: none;
+  }
+  /*Beginning of Home Page Redesign*/
+
+  .codename {
+    font-size: 21px;
+  }
+
+  .codename > span {
+    font-size: 25px;
+  }
+
+  .p-info {
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex: 0 1 100%;
+    gap: 10px;
+  }
+
+  .p-info > .text {
+    width: 100%;
+    flex: 0 1 100%;
+  }
+  /*End of home page design*/
+
+  /*Beginning of About Page Design */
+
+  .About > .mouseIcon {
+    display: none;
+  }
+
+  .abt-contain {
+    width: 80%;
+  }
+
+  .abt-content {
+    flex: 0 1 100%;
+  }
+
+  .abt-heading > h1 {
+    font-size: 28px;
+  }
+  /*End of "About page" design */
+
+  /*Beginning of "Skills page" design */
+
+  .mousefrag {
+    display: none;
+  }
+
+  .sks-contain {
+    height: 80%;
+    gap: 50px;
+    justify-content: center;
+    padding-bottom: 95px;
+  }
+
+  .sks-head {
+    max-height: 80px;
+  }
+
+  .sks-heading {
+    height: 100%;
+  }
+
+  .sk-services {
+    min-width: 300px;
+  }
+
+  .sk-skills {
+    width: 60%;
+    min-width: 240px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .sk-langs {
+    flex: 0 1 40%;
+  }
+
+  .sk-langs > div > h1 {
+    font-size: 13px;
+  }
+
+  /* End of "Skills page" design*/
+
+  /* Beginning of "Contact page" design*/
+
+  .con-mouse {
+    display: none;
+  }
+  .Contact {
+    padding-top: 0px;
+  }
+  .con-contain {
+    gap: 50px;
+    justify-content: center;
+  }
+
+  Footer {
+    height: fit-content;
+    padding: 20px 0px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  Footer > .socials {
+    order: -1;
+    flex: 0 1 100%;
+    align-self: flex-start;
+    justify-content: center;
+  }
+
+  Footer > .terms {
+    gap: 5px;
+  }
+}
+
+/* End of Contact Page Design*/
+
+@media (max-width: 575.98px) {
+  /* CSS rules for phones */
+
+  /*Beginning of Home Page Redesign*/
+
+  Header {
+    height: 10vh;
+    min-height: 60px;
+  }
+
+  .codename {
+    font-size: 15px;
+  }
+
+  .codename > span {
+    font-size: 20px;
+    color: #12f7d6;
+  }
+
+  .bd-home > main > h1 {
+    font-size: 40px;
+  }
+
+  .profile {
+    padding: 60px 20px;
+    flex: 0 1 80%;
+    gap: 30px;
+  }
+
+  .pf-contain {
+    height: 80%;
+  }
+
+  .pct-div {
+    height: 60px;
+    width: 60px;
+  }
+
+  .pct-div > img {
+    height: 60px;
+    width: 60px;
+  }
+
+  .pf-contain > .pct > h1 {
+    font-size: 17px;
+  }
+  .pct > p {
+    font-size: 11px;
+  }
+
+  .langs > span {
+    padding: 5px 0px;
+  }
+
+  .profile > button {
+    padding: 9px;
+  }
+
+  /*End of home page design*/
+
+  /*Beginning of About Page Design */
+  .abt-content {
+    align-items: center;
+  }
+
+  .abt-contain {
+    width: 90%;
+  }
+
+  .abt-pic {
+    min-height: 250px;
+    min-width: 160px;
+  }
+
+  /*End of "About page" design */
+
+  /*Beginning of "Skills page" design */
+
+  .skillsets {
+    height: fit-content;
+    width: 100%;
+    gap: 40px;
+    justify-content: start;
+  }
+
+  .sks-contain {
+    padding-bottom: 0px;
+  }
+
+  .sks-head {
+    height: fit-content;
+    max-height: fit-content;
+  }
+
+  .sk-services {
+    height: fit-content;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 100%;
+    min-width: 100%;
+  }
+
+  .skserv {
+    height: 70px;
+    flex: 0 1 100%;
+  }
+
+  .sk-skills {
+    width: 70%;
+    height: fit-content;
+    justify-content: center;
+  }
+
+  /* End of "Skills page" design*/
+
+  /* Beginning of "Contact page" design*/
+
+  .con-foot {
+    gap: 40px;
+    justify-content: flex-start;
+  }
+
+  .inputdivs {
+    width: 80%;
+    min-width: 60%;
+  }
+}
